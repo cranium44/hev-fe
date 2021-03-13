@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutPage = pops => {
     return(
-        null
+        <div><h3>About</h3></div>
     )
 }
 
