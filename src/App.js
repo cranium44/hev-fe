@@ -8,6 +8,7 @@ import {
 import Home from "./components/pages/home/Home";
 import OrderPage from './components/pages/order/OrderPage'
 import AboutPage from './components/pages/about/AboutPage'
+import AdminPage from './components/pages/admin/Admin'
 import "./App.css";
 
 function App() {
@@ -24,6 +25,9 @@ function App() {
             </Route>
             <Route path="/about" exact>
               <AboutPage />
+            </Route>
+            <Route path="/admin" exact>
+              <AdminPage/>
             </Route>
             <Redirect to="/" />
           </Switch>
