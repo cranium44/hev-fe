@@ -2,7 +2,7 @@ import React from 'react';
 
 const Home = pops => {
     return(
-        null
+        <div><h3>Home</h3></div>
     )
 }
 

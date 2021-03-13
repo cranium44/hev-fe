@@ -2,7 +2,7 @@ import React from 'react';
 
 const OrderPage = pops => {
     return(
-        null
+        <div><h3>Order</h3></div>
     )
 }
 
