@@ -1,33 +1,30 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
 import "./NavBar.css";
 
 const NavBar = () => {
-  return (
-    <nav>
-      <div className="nav-container">
-        <div className="nav-logo">
-          <img src="./hev-logo.png" alt="logo" />
-        </div>
-        <div className="nav-title">
-          <h1>Healthcare Excellence Ventures</h1>
-        </div>
-        <div>
-          <ul className="nav-links">
-            <li className="nav-link">
-              <NavLink to="/">Home</NavLink>
-            </li>
-            <li className="nav-link">
-              <NavLink to="/order">Order</NavLink>
-            </li>
-            <li className="nav-link">
-              <NavLink to="/about">About</NavLink>
-            </li>
-          </ul> 
-        </div>
-      </div>
-    </nav>
-  );
+    return (
+        <Navbar bg="dark" variant="dark" expand="md" fixed="top">
+            <Navbar.Brand href="/">Healthcare Excellence Ventures</Navbar.Brand>
+            <Navbar.Toggle />
+            <Navbar.Collapse>
+                <Nav className="mr-auto">
+                    <Nav.Link href="/">Home</Nav.Link>
+                    <Nav.Link href="/order">Order</Nav.Link>
+                    <Nav.Link href="/about">About</Nav.Link>
+                </Nav>
+                <Form inline>
+                    <FormControl
+                        type="text"
+                        placeholder="Search"
+                        className="mr-sm-2"
+                    />
+                    <Button variant="outline-info">Search</Button>
+                </Form>
+            </Navbar.Collapse>
+        </Navbar>
+    );
 };
 
 export default NavBar;
