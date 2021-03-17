@@ -2,15 +2,54 @@ import React, { useEffect, useState } from "react";
 
 import "./Admin.css";
 
-// {
-//     id: {type: Number, required: true},
-//     name: {type: String, required: true},
-//     price: {type: Number, required: true},
-//     desc: {type: String},
-//     pkgSize: {type: String},
-// }
+const DUMMY_DATA = [
+    {
+        id: 1,
+        name: "item1",
+        price: 23,
+        brand: "Cavax",
+        pkgSize: "pcs",
+    },
+    {
+        id: 2,
+        name: "item2",
+        price: 23,
+        brand: "Cavax",
+        pkgSize: "pcs",
+    },
+    {
+        id: 3,
+        name: "item3",
+        price: 23,
+        brand: "Cavax",
+        pkgSize: "pcs",
+    },
+    {
+        id: 4,
+        name: "item4",
+        price: 23,
+        brand: "Cavax",
+        pkgSize: "pcs",
+    },
+    {
+        id: 5,
+        name: "item5",
+        price: 23,
+        brand: "Cavax",
+        pkgSize: "pcs",
+    },
+    {
+        id: 6,
+        name: "item6",
+        price: 23,
+        brand: "Cavax",
+        pkgSize: "pcs",
+    },
+];
+
 const Admin = (props) => {
     const [item, setItem] = useState({});
+    // eslint-disable-next-line no-unused-vars
     const [itemList, setItemList] = useState(null);
 
     //fields
@@ -26,10 +65,11 @@ const Admin = (props) => {
             id: serialNumber,
             name,
             price,
-            desc: brand,
+            brand,
             pkgSize,
         });
-        console.log(item);
+        // console.log(item);
+        DUMMY_DATA.concat(item)
     };
 
     useEffect(() => {
@@ -37,7 +77,7 @@ const Admin = (props) => {
             const response = await fetch("http://localhost:5000/test");
             const data = await response.json();
             setItemList(data);
-            console.log(data)
+            console.log(data);
         }
         fetchData();
     }, []);
@@ -96,7 +136,16 @@ const Admin = (props) => {
                     </button>
                 </form>
             </div>
-            <div className="admin__current-items col-5"></div>
+            <div className="admin__current-items col-5">
+                <h3>Present items</h3>
+                <ul>
+                    {
+                        DUMMY_DATA.map((item => {
+                            return(<li>{item.name}</li>)
+                        }))
+                    }
+                </ul>
+            </div>
         </div>
     );
 };

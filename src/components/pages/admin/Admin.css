@@ -1,26 +1,52 @@
-.admin__container{
+.admin__container {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
 
-.admin__item-form{
+.admin__item-form {
     padding: 4rem 5rem;
     border: 1px solid black;
 }
 
-.admin__input{
+.admin__input {
     display: block;
+    border: 2px solid rgba(28, 110, 164, 0.4);
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 18px 3px rgba(28, 110, 164, 0.4);
+    box-shadow: 0px 0px 18px 3px rgba(28, 110, 164, 0.4);
+    font-size: 1.5rem;
+    padding: 1rem 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
 }
 
-.admin__label{
+.admin__input:active {
+    border: 2px solid rgba(28, 110, 164, 0.8);
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 18px 3px rgba(28, 110, 164, 0.4);
+    box-shadow: 0px 0px 18px 3px rgba(28, 110, 164, 0.4);
+}
+
+.admin__label {
     font-size: 2rem;
 }
 
-.admin__send-btn{
-
+.admin__send-btn {
+    color: #fff;
+    background: rgba(28, 110, 164, 1);
+    border: none;
+    border-radius: 10px;
+    padding: 2rem 4rem;
+    font-weight: 700;
+    font-size: 1.6rem;
 }
 
-.admin__current-items{
+.admin__current-items {
+    padding: 2rem;
     border: 1px solid black;
+}
+
+.admin__current-items h3 {
+    font-size: 1.8rem;
 }
