@@ -18,13 +18,13 @@
   font-size: 3rem;
 }
 
-nav {
+/* nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 6rem;
   background-color: #f8efe4;
-}
+} */
 
 .nav-links {
   list-style: none;
