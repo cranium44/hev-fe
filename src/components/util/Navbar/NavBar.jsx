@@ -5,8 +5,8 @@ import "./NavBar.css";
 
 const NavBar = () => {
     return (
-        <Navbar bg="dark" variant="dark" expand="md" fixed="top">
-            <Navbar.Brand href="/">Healthcare Excellence Ventures</Navbar.Brand>
+        <Navbar bg="primary" variant="dark" expand="md">
+            <Navbar.Brand href="/" className="nav-title">Healthcare Excellence Ventures</Navbar.Brand>
             <Navbar.Toggle />
             <Navbar.Collapse>
                 <Nav className="mr-auto">

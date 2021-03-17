@@ -13,18 +13,14 @@
   height: 3rem;
 }
 
-.nav-title h1 {
-  color: #4a0000;
+.nav-title{
   font-size: 3rem;
 }
 
-/* nav {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+nav {
+  font-size: 1.8rem;
   height: 6rem;
-  background-color: #f8efe4;
-} */
+}
 
 .nav-links {
   list-style: none;
