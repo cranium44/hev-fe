@@ -1,8 +1,11 @@
 import React from 'react';
+import {default as Carousel} from '../../UIElements/carousel/Carousel';
 
 const Home = pops => {
     return(
-        <div><h3>Home</h3></div>
+        <div>
+            <Carousel/>
+        </div>
     )
 }
 
