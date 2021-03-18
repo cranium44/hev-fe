@@ -12,8 +12,8 @@ const AppCarousel = () => {
                     alt="First slide"
                 />
                 <Carousel.Caption>
-                    <h3>First slide label</h3>
-                    <p>
+                    <h3 className="carousel-title">First slide label</h3>
+                    <p className="carousel-text">
                         Nulla vitae elit libero, a pharetra augue mollis
                         interdum.
                     </p>
@@ -27,8 +27,8 @@ const AppCarousel = () => {
                 />
 
                 <Carousel.Caption>
-                    <h3>Second slide label</h3>
-                    <p>
+                    <h3 className="carousel-title">Second slide label</h3>
+                    <p className="carousel-text">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     </p>
                 </Carousel.Caption>
@@ -41,8 +41,8 @@ const AppCarousel = () => {
                 />
 
                 <Carousel.Caption>
-                    <h3>Third slide label</h3>
-                    <p>
+                    <h3 className="carousel-title">Third slide label</h3>
+                    <p className="carousel-text">
                         Praesent commodo cursus magna, vel scelerisque nisl
                         consectetur.
                     </p>
