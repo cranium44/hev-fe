@@ -5,6 +5,11 @@ const Home = pops => {
     return(
         <div>
             <Carousel/>
+            <section>
+                <div>
+                    
+                </div>
+            </section>
         </div>
     )
 }

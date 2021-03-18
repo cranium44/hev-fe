@@ -2,3 +2,12 @@
     height: 80vh;
     object-fit: cover;
 }
+
+.carousel-title{
+    font-size: 2.4rem;
+    color: #000;
+}
+
+.carousel-text{
+    font-size: 2rem;
+}
