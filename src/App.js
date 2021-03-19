@@ -9,6 +9,7 @@ import Home from "./components/pages/home/Home";
 import OrderPage from './components/pages/order/OrderPage'
 import AboutPage from './components/pages/about/AboutPage'
 import AdminPage from './components/pages/admin/Admin'
+import Footer from './components/util/footer/Footer'
 import "./App.css";
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
             <Redirect to="/" />
           </Switch>
         </main>
+        <Footer/>
     </Router>
   );
 }
