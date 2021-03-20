@@ -1,4 +1,6 @@
 import React from "react";
+ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 import "./Footer.css";
 
 const Footer = () => {
@@ -14,6 +16,7 @@ const Footer = () => {
                     <p>Secretariat road, Gwagwalada</p>
                 </div>
                 <div className="footer__socials col-2">
+                <FontAwesomeIcon icon={["fab", "github"]} />
                     <ul className="footer__links">
                         <li className="footer__link"><a href="#">Facebook</a></li>
                         <li className="footer__link"><a href="#">Twitter</a></li>
