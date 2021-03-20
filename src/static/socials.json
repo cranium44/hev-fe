@@ -1,0 +1,19 @@
+{
+    "links":[
+        {
+            "title": "Facebook",
+            "href":"https://www.facebook.com"
+        },
+        {
+            "title": "Twitter",
+            "href":"https://www.twitter.com"
+        },
+        {
+            "title": "Instagram",
+            "href":"https://www.instagram.com"
+        }
+    ],
+    "email": "support@hev.com",
+    "phone": "+2347031234545",
+    "address": "Spring Valley Estate, Lugbe, Abuja"
+}
