@@ -15,8 +15,13 @@ const ContactForm = () => {
                     type="email"
                     placeholder="Enter your email address..."
                 />
+                <input
+                    name="phone"
+                    type="number"
+                    placeholder="Enter your email address..."
+                />
             </div>
-            <textarea name="mesage" placeholder="Enter message..." />
+            <textarea name="mesage" placeholder="Enter message..." itemType="text" rows="7" cols="100"/>
             <button className="about__contact__btn">Send</button>
         </div>
     );
