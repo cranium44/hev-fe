@@ -28,7 +28,7 @@ const Footer = () => {
                         {data.links.map((link, index) => {
                             return (
                                 <li className="footer__link" key={index}>
-                                    <a href={link.href}>{link.title}</a>
+                                    <a href={link.href} target="blank">{link.title}</a>
                                 </li>
                             );
                         })}
