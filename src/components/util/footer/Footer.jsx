@@ -8,7 +8,7 @@ const Footer = () => {
     return (
         <footer className="footer">
             <div className="footer__container">
-                <div className="footer__branding col-5">
+                <div className="footer__branding col-md-5">
                     <img
                         src="/hev-logo.png"
                         alt="logo"
@@ -18,11 +18,14 @@ const Footer = () => {
                         Healthcare Excellence Ventures
                     </span>
                 </div>
-                <div className="footer__contact-info col-4">
+                <div className="footer__contact-info col-md-4">
                     <h4>Address</h4>
-                    <p>Secretariat road, Gwagwalada</p>
+                    <p>{data.address}</p>
+                    <span className="block">{data.phone}</span>
+                    <span className="block">{data.email}</span>
+                    
                 </div>
-                <div className="footer__socials col-2">
+                <div className="footer__socials col-md-2">
                     <FontAwesomeIcon icon={["fab", "github"]} />
                     <ul className="footer__links">
                         {data.links.map((link, index) => {
