@@ -13,6 +13,7 @@
 .about__mission{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-evenly;
 }
 
@@ -21,4 +22,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.about__contact-form-container{
+    width:100%;
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about__contact__btn{
+    border-radius:2rem;
+    border: none;
+    background-color: aqua;
+    color: purple;
 }

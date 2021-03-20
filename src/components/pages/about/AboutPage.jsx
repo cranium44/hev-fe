@@ -5,6 +5,11 @@ const AboutPage = (pops) => {
     return (
         <div>
             <div className="about__container">
+                <img
+                    className="about__logo"
+                    src="/images/team-50.png"
+                    alt="team logo"
+                />
                 <h2>Our Team</h2>
                 <div className="col-6">
                     <p>
@@ -23,6 +28,11 @@ const AboutPage = (pops) => {
                 </div>
                 <div className="about__mission">
                     <div className="col-5 mission_container">
+                        <img
+                            className="about__logo"
+                            src="/images/mission-50.png"
+                            alt="mission logo"
+                        />
                         <h3>Our Mission</h3>
                         <p>
                             Sed vitae ante ut metus bibendum eleifend. Curabitur
@@ -43,6 +53,11 @@ const AboutPage = (pops) => {
                         </p>
                     </div>
                     <div className="col-5 vision_container">
+                        <img
+                            className="about__logo"
+                            src="/images/vision-50.png"
+                            alt="vision logo"
+                        />
                         <h3>Our Vision</h3>
                         <p>
                             Orci varius natoque penatibus et magnis dis
@@ -61,7 +76,12 @@ const AboutPage = (pops) => {
                         </p>
                     </div>
                 </div>
-                <div className="about__contact-form-container"></div>
+                <div className="about__contact-form-container">
+                    <input name="name" type="text" placeholder="Enter full name..."/>
+                    <input name="email" type="email" placeholder="Enter your email address..."/>
+                    <textarea name="mesage" placeholder="Enter message..."/>
+                    <button className="about__contact__btn">Send</button>
+                </div>
             </div>
         </div>
     );
