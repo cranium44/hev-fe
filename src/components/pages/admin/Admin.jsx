@@ -1,56 +1,13 @@
 import React, { useEffect, useState } from "react";
 
+import data from '../../../static/dummy_products.json'
 import "./Admin.css";
 
-const DUMMY_DATA = [
-    {
-        id: 1,
-        name: "item1",
-        price: 23,
-        brand: "Cavax",
-        pkgSize: "pcs",
-    },
-    {
-        id: 2,
-        name: "item2",
-        price: 23,
-        brand: "Cavax",
-        pkgSize: "pcs",
-    },
-    {
-        id: 3,
-        name: "item3",
-        price: 23,
-        brand: "Cavax",
-        pkgSize: "pcs",
-    },
-    {
-        id: 4,
-        name: "item4",
-        price: 23,
-        brand: "Cavax",
-        pkgSize: "pcs",
-    },
-    {
-        id: 5,
-        name: "item5",
-        price: 23,
-        brand: "Cavax",
-        pkgSize: "pcs",
-    },
-    {
-        id: 6,
-        name: "item6",
-        price: 23,
-        brand: "Cavax",
-        pkgSize: "pcs",
-    },
-];
+
 
 const Admin = (props) => {
     const [item, setItem] = useState({});
-    // eslint-disable-next-line no-unused-vars
-    const [itemList, setItemList] = useState(null);
+    const [itemList, setItemList] = useState(data.items);
 
     //fields
     const [serialNumber, setSerialNumber] = useState("");
@@ -68,8 +25,7 @@ const Admin = (props) => {
             brand,
             pkgSize,
         });
-        // console.log(item);
-        DUMMY_DATA.concat(item)
+        setItemList(itemList.concat(item))
     };
 
     useEffect(() => {
@@ -140,7 +96,7 @@ const Admin = (props) => {
                 <h3>Present items</h3>
                 <ul>
                     {
-                        DUMMY_DATA.map((item => {
+                        itemList.map((item => {
                             return(<li>{item.name}</li>)
                         }))
                     }

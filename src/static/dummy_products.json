@@ -1,0 +1,46 @@
+{
+    "items": [
+        {
+            "id": 1,
+            "name": "item1",
+            "price": 23,
+            "brand": "Cavax",
+            "pkgSize": "pcs"
+        },
+        {
+            "id": 2,
+            "name": "item2",
+            "price": 23,
+            "brand": "Cavax",
+            "pkgSize": "pcs"
+        },
+        {
+            "id": 3,
+            "name": "item3",
+            "price": 23,
+            "brand": "Cavax",
+            "pkgSize": "pcs"
+        },
+        {
+            "id": 4,
+            "name": "item4",
+            "price": 23,
+            "brand": "Cavax",
+            "pkgSize": "pcs"
+        },
+        {
+            "id": 5,
+            "name": "item5",
+            "price": 23,
+            "brand": "Cavax",
+            "pkgSize": "pcs"
+        },
+        {
+            "id": 6,
+            "name": "item6",
+            "price": 23,
+            "brand": "Cavax",
+            "pkgSize": "pcs"
+        }
+    ]
+}
