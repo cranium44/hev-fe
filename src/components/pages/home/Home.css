@@ -1,0 +1,32 @@
+.home__details-container :nth-child(odd){
+
+}
+
+.home__details-container :nth-child(odd){
+
+}
+
+.home__supplier-section{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 30vh;
+}
+
+.home__suppliers{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.supplier-logo{
+    width: 20rem;
+    height: 13rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
