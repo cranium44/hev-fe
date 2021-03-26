@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import { send } from "emailjs-com";
 import "./AboutPage.css";
 
 const ContactForm = () => {
-    const url = "https://hev-backend.herokuapp.com/email"
+    const url = "https://hev-backend.herokuapp.com/email";
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
@@ -10,29 +11,22 @@ const ContactForm = () => {
 
     const handleSubmit = (ev) => {
         ev.preventDefault();
-        console.log({ name, email, message, phone });
-        const requestBody = { name, email, message, phone }
-        sendEmail(url, requestBody)
+        const requestBody = { name, email, message, phone };
+        send(
+            "service_fk73p0g",
+            "template_vy80sah",
+            requestBody,
+            "user_yjNO8Xrx4Xp4aH0imkxWv"
+        );
+        reset();
     };
 
-    async function sendEmail(url, body) {
-        const response = await fetch(
-            url,
-            {
-                method: 'POST', // *GET, POST, PUT, DELETE, etc.
-                mode: 'cors', // no-cors, *cors, same-origin
-                cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-                credentials: 'same-origin', // include, *same-origin, omit
-                headers: {
-                  'Content-Type': 'application/json'
-                },
-                redirect: 'follow', // manual, *follow, error
-                referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-                body: JSON.stringify(body) // body data type must match "Content-Type" header
-              }
-        );
-        return response.json();
-    }
+    const reset = () => {
+        setEmail("");
+        setName("");
+        setPhone("");
+        setMessage("");
+    };
 
     return (
         <div>
