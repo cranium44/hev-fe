@@ -3,6 +3,7 @@ import { send } from "emailjs-com";
 import "./AboutPage.css";
 
 const ContactForm = () => {
+    //eslint-disable-next-line
     const url = "https://hev-backend.herokuapp.com/email";
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
