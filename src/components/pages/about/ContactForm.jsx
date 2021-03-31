@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { send } from "emailjs-com";
 import "./AboutPage.css";
 
 const ContactForm = () => {
+    //eslint-disable-next-line
+    const url = "https://hev-backend.herokuapp.com/email";
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
@@ -9,7 +12,21 @@ const ContactForm = () => {
 
     const handleSubmit = (ev) => {
         ev.preventDefault();
-        console.log({ name, email, message, phone });
+        const requestBody = { name, email, message, phone };
+        send(
+            "service_fk73p0g",
+            "template_vy80sah",
+            requestBody,
+            "user_yjNO8Xrx4Xp4aH0imkxWv"
+        );
+        reset();
+    };
+
+    const reset = () => {
+        setEmail("");
+        setName("");
+        setPhone("");
+        setMessage("");
     };
 
     return (
