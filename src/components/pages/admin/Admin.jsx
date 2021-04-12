@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Login from "./login/Login";
 import AdminMain from "./main/AdminMain";
 
-import data from "../../../static/dummy_products.json";
 import "./Admin.css";
 
 const Admin = (props) => {
