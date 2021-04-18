@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 import data from "../../../../static/dummy_products.json";
 
@@ -21,21 +22,29 @@ const AdminMain = (props) => {
             categoryId,
             description,
         });
-        const response = await fetch(
-            "https://hev-backend.herokuapp.com/api/items/",
-            {
-                method: "POST",
-                cache: "no-cache",
-                headers: {
-                    "Content-type": "application/json",
-                },
-                body: JSON.stringify(item),
-            }
-        );
+        // const response = await fetch(
+        //     "https://hev-backend.herokuapp.com/api/items/",
+        //     {
+        //         method: "POST",
+        //         cache: "no-cache",
+        //         headers: {
+        //             "Content-type": "application/json",
+        //         },
+        //         body: JSON.stringify(item),
+        //     }
+        // );
 
-        const data = await response.json();
-        console.log(data);
-        setItemList((prev) => prev.concat(data));
+        try {
+            const response = await axios.post(
+                "https://hev-backend.herokuapp.com/api/items/",
+                JSON.stringify(item)
+            );
+            const data = await response.json();
+            console.log(data);
+            setItemList((prev) => prev.concat(data));
+        } catch (e) {
+            console.log(e);
+        }
     };
 
     useEffect(() => {
