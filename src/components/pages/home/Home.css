@@ -1,9 +1,25 @@
 .home__details-container :nth-child(odd){
-
+    justify-content: flex-start;
 }
 
-.home__details-container :nth-child(odd){
+.home__details-container :nth-child(even){
+    justify-content: flex-end;
+}
 
+.home__details-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.jumbotron-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.jumbotron-contents{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .home__supplier-section{

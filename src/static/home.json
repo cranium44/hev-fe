@@ -2,15 +2,18 @@
     "data": [
         {
             "title": "We supply",
-            "body": "Whatever your medical needs are we fulfill it. Our goods are gotten from top class, world standard producers. Whatever it is, we supply."
+            "body": "Whatever your medical needs are we fulfill it. Our goods are gotten from top class, world standard producers. Whatever it is, we supply.",
+            "imgUrl": "/images/home/supply.png"
         },
         {
             "title": "We deliver",
-            "body": "Straight to your organization's doorstep! Our clients are well satisfied with our delivery system that promises the best service on time."
+            "body": "Straight to your organization's doorstep! Our clients are well satisfied with our delivery system that promises the best service on time.",
+            "imgUrl": "/images/home/delivery.png"
         },
         {
             "title": "We are reliable",
-            "body": "No stories, no excuses! We are dependable and reliable, always delivering what is asked for efficiently. At Healthcare Excellence Ventures, trust is our selling point."
+            "body": "No stories, no excuses! We are dependable and reliable, always delivering what is asked for efficiently. At Healthcare Excellence Ventures, trust is our selling point.",
+            "imgUrl": "/images/home/reliable.png"
         }
     ],
     "suppliers": [
