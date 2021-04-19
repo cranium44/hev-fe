@@ -1,6 +1,6 @@
 import React from "react";
 import { default as Carousel } from "../../UIElements/carousel/Carousel";
-import { Jumbotron, Container } from "react-bootstrap";
+import { Jumbotron} from "react-bootstrap";
 
 import data from "../../../static/home.json";
 import "./Home.css";
