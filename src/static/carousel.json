@@ -1,0 +1,19 @@
+{
+    "slides": [
+        {
+            "title": "Medical Machinery and Devices",
+            "description": "We supply all kinds of medical machinery and devices! These includes incubators, respirators and EKGs",
+            "imgUrl": "/images/carousel/equip2.webp"
+        },
+        {
+            "title": "Medical Disposables",
+            "description": "Dealers in all kinds of medical disposable including, drapes and gowns, surgical equipment, etc.",
+            "imgUrl": "/images/carousel/disposable.webp"
+        },
+        {
+            "title": "Machinery and device accesories",
+            "description": "Your one stop shop for device accesories!",
+            "imgUrl": "/images/carousel/accesory.jpg"
+        }
+    ]
+}
