@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 import data from "../../../../static/dummy_products.json";
 
@@ -21,24 +22,18 @@ const AdminMain = (props) => {
             categoryId,
             description,
         });
-        
+
         try {
-            const response = await fetch(
+            const response = await axios.post(
                 "https://hev-backend.herokuapp.com/api/items/",
-                {
-                    method: "POST",
-                    cache: "no-cache",
-                    headers: {
-                        "Content-type": "application/json",
-                    },
-                    body: JSON.stringify(item),
-                }
+                item
             );
-            const data = await response.json();
+            const data = await response.data; //await response.json();
             console.log(data);
             setItemList((prev) => prev.concat(data));
         } catch (e) {
             console.log(e);
+            alert("A problem occured when adding the item")
         }
     };
 
@@ -52,7 +47,7 @@ const AdminMain = (props) => {
             console.log(data);
         }
         fetchData();
-    }, []);
+    }, [itemList]);
 
     useEffect(() => {
         async function fetchCategories() {
