@@ -25,7 +25,7 @@ const AdminMain = (props) => {
 
         try {
             const response = await axios.post(
-                "http://localhost:5000/api/items/",
+                "https://hev-backend.herokuapp.com/api/items/",
                 item
             );
             const data = await response.data; //await response.json();
