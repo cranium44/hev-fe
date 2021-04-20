@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
+import { Navbar, Nav} from "react-bootstrap";
 import "./NavBar.css";
 
 const NavBar = () => {
@@ -13,14 +13,6 @@ const NavBar = () => {
                     <Nav.Link href="/order">Order</Nav.Link>
                     <Nav.Link href="/about">About</Nav.Link>
                 </Nav>
-                <Form inline>
-                    <FormControl
-                        type="text"
-                        placeholder="Search"
-                        className="mr-sm-2"
-                    />
-                    <Button variant="outline-info">Search</Button>
-                </Form>
             </Navbar.Collapse>
         </Navbar>
     );
