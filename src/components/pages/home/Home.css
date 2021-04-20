@@ -9,6 +9,7 @@
 .home__details-container{
     display: flex;
     flex-direction: column;
+    padding-top: 2rem;
 }
 
 .jumbotron-container{
@@ -24,11 +25,10 @@
 
 .home__supplier-section{
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 30vh;
+    /* height: 30vh; */
 }
 
 .home__suppliers{
@@ -37,7 +37,8 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
 }
 
 .supplier-logo{
@@ -45,4 +46,19 @@
     height: 13rem;
     margin-left: 4rem;
     margin-right: 4rem;
+}
+
+/*for mobile screens*/
+@media only screen and (min-width: 768px){
+    .home__supplier-section{
+        height: auto;
+    }
+
+    .home__suppliers{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
 }

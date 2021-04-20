@@ -1,5 +1,4 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import data from "../../../static/socials.json";
 import "./Footer.css";
@@ -26,7 +25,6 @@ const Footer = () => {
                     
                 </div>
                 <div className="footer__socials col-md-2">
-                    <FontAwesomeIcon icon={["fab", "github"]} />
                     <ul className="footer__links">
                         {data.links.map((link, index) => {
                             return (
