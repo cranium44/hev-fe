@@ -38,7 +38,7 @@ const Home = (pops) => {
                 <div className="home__suppliers">
                     {data.suppliers.map((supplier, index) => {
                         return (
-                            <div className="home__supplier">
+                            <div className="home__supplier" key={index}>
                                 <img
                                     className="supplier-logo"
                                     src={supplier.imgSrc}
