@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { CloudinaryContext } from "cloudinary-react";
 import axios from "axios";
 
 import data from "../../../../static/dummy_products.json";
+import { fetchPhotos, openUploadWidget } from "../../../../util/cloudinary_helper";
 
 const AdminMain = (props) => {
     const [item, setItem] = useState({});
@@ -12,6 +14,7 @@ const AdminMain = (props) => {
     const [categoryId, setCategoryId] = useState(0);
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
+    const [images, setImages] = useState([]);
 
     const hanldeSubmit = async (evt) => {
         evt.preventDefault();
@@ -33,8 +36,17 @@ const AdminMain = (props) => {
             setItemList((prev) => prev.concat(data));
         } catch (e) {
             console.log(e);
-            alert("A problem occured when adding the item")
+            alert("A problem occured when adding the item");
         }
+    };
+
+    const handleImageUpload = () => {
+        // get the first input element with the type of file,
+        const imageFile = document.querySelector('input[type="file"]');
+        // destructure the files array from the resulting object
+        const files = imageFile.files;
+        // log the result to the console
+        console.log("Image file", files[0]);
     };
 
     useEffect(() => {
@@ -47,7 +59,7 @@ const AdminMain = (props) => {
             console.log(data);
         }
         fetchData();
-    }, [itemList]);
+    }, []);
 
     useEffect(() => {
         async function fetchCategories() {
@@ -59,6 +71,26 @@ const AdminMain = (props) => {
         }
         fetchCategories();
     }, []);
+
+    const beginUpload = tag => {
+        const uploadOptions = {
+          cloudName: "cranium47",
+          tags: [tag],
+          uploadPreset: "upload"
+        };
+      
+        openUploadWidget(uploadOptions, (error, photos) => {
+          if (!error) {
+            console.log(photos);
+            if(photos.event === 'success'){
+              setImages([...images, photos.info.public_id])
+            }
+          } else {
+            console.log(error);
+          }
+        })
+      }
+      
 
     return (
         <div className="admin__container container">
@@ -114,15 +146,16 @@ const AdminMain = (props) => {
                             onChange={(e) => setDescription(e.target.value)}
                         />
                     </div>
-                    <div className="form-group">
+                    {/* <div className="form-group">
                         <label for="img">Select image:</label>
                         <input
                             type="file"
-                            id="img"
+                            id="imgSelect"
                             name="img"
                             accept="image/*"
                         />
-                    </div>
+                    </div> */}
+                    <button onClick={() => beginUpload()}>Upload Image</button>
                     <button
                         type="submit"
                         className="btn-primary btn-black-outline"
@@ -130,12 +163,19 @@ const AdminMain = (props) => {
                         Add item
                     </button>
                 </form>
+                <div>
+                    <CloudinaryContext cloudName="cranium47">
+                        {images.map((i) => (
+                            <img src={i} alt="" />
+                        ))}
+                    </CloudinaryContext>
+                </div>
             </div>
             <div className="admin__current-items col-5">
                 <h3>Present items</h3>
                 <ul>
-                    {itemList.map((item) => {
-                        return <li>{item.name}</li>;
+                    {itemList.map((item, index) => {
+                        return <li key={index}>{item.name}</li>;
                     })}
                 </ul>
             </div>

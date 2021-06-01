@@ -1,6 +1,7 @@
 .carousel-img {
     height: 50vh;
     object-fit: cover;
+    opacity: 0.5;
 }
 
 .carousel-title{
@@ -33,5 +34,6 @@
     .carousel-img {
         height: 50vh;
         object-fit: cover;
+        opacity: 0.3;
     }
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import { default as Carousel } from "../../UIElements/carousel/Carousel";
-import { Jumbotron} from "react-bootstrap";
+import { Jumbotron } from "react-bootstrap";
 
 import data from "../../../static/home.json";
 import "./Home.css";
@@ -10,17 +10,17 @@ const Home = (pops) => {
         <div>
             <Carousel />
             <section>
-                <div className="home__details-container col-md-12">
+                <div className="home__details-container col-sm-12">
                     {data.data.map((item, index) => {
                         return (
                             <div className="jumbotron-container">
-                                <Jumbotron key={index} className="col-md-10">
+                                <Jumbotron key={index} className="col-sm-10">
                                     <div className="jumbotron-contents">
-                                        <div style={{width:"70%"}}>
+                                        <div style={{ width: "70%" }}>
                                             <h1>{item.title}</h1>
                                             <p>{item.body}</p>
                                         </div>
-                                        <div style={{width:"30%"}}>
+                                        <div style={{ width: "30%" }} className="jumbotron-image-container">
                                             <img
                                                 src={item.imgUrl}
                                                 alt={item.title}
