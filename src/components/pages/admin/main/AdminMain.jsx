@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { CloudinaryContext } from "cloudinary-react";
 import axios from "axios";
 
 import data from "../../../../static/dummy_products.json";
-import { fetchPhotos, openUploadWidget } from "../../../../util/cloudinary_helper";
+
+const url = "https://hev-backend.herokuapp.com/api/items/";
 
 const AdminMain = (props) => {
-    const [item, setItem] = useState({});
     const [itemList, setItemList] = useState(data.items);
     const [categories, setCategories] = useState([]);
 
@@ -14,25 +13,25 @@ const AdminMain = (props) => {
     const [categoryId, setCategoryId] = useState(0);
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
-    const [images, setImages] = useState([]);
+
+    //image processing states...
+    const [fileInputState, setFileInputState] = useState("");
+    const [selectedFile, setSelectedFile] = useState();
 
     const hanldeSubmit = async (evt) => {
         evt.preventDefault();
         const element = document.getElementById("category");
         setCategoryId(element.options[element.selectedIndex].value);
-        setItem({
+        let dataToSend = {
             name,
             categoryId,
             description,
-        });
+            imageData: await getImageAsBase64(selectedFile),
+        };
 
         try {
-            const response = await axios.post(
-                "https://hev-backend.herokuapp.com/api/items/",
-                item
-            );
+            const response = await axios.post(url, dataToSend);
             const data = await response.data; //await response.json();
-            console.log(data);
             setItemList((prev) => prev.concat(data));
         } catch (e) {
             console.log(e);
@@ -40,13 +39,29 @@ const AdminMain = (props) => {
         }
     };
 
-    const handleImageUpload = () => {
-        // get the first input element with the type of file,
-        const imageFile = document.querySelector('input[type="file"]');
-        // destructure the files array from the resulting object
-        const files = imageFile.files;
-        // log the result to the console
-        console.log("Image file", files[0]);
+    const handleFileInputChange = async (e) => {
+        const file = e.target.files[0];
+        setSelectedFile(file);
+        setFileInputState(e.target.value);
+    };
+
+    const getImageAsBase64 = async (file) => {
+        return new Promise((resolve) => {
+            let fileInfo;
+            let baseURL = "";
+            // Make new FileReader
+            let reader = new FileReader();
+
+            // Convert the file to base64 text
+            reader.readAsDataURL(file);
+            reader.onload = () => {
+                // Make a fileInfo Object
+                console.log("Called", reader);
+                baseURL = reader.result;
+                console.log(baseURL);
+                resolve(baseURL);
+            };
+        });
     };
 
     useEffect(() => {
@@ -71,26 +86,6 @@ const AdminMain = (props) => {
         }
         fetchCategories();
     }, []);
-
-    const beginUpload = tag => {
-        const uploadOptions = {
-          cloudName: "cranium47",
-          tags: [tag],
-          uploadPreset: "upload"
-        };
-      
-        openUploadWidget(uploadOptions, (error, photos) => {
-          if (!error) {
-            console.log(photos);
-            if(photos.event === 'success'){
-              setImages([...images, photos.info.public_id])
-            }
-          } else {
-            console.log(error);
-          }
-        })
-      }
-      
 
     return (
         <div className="admin__container container">
@@ -146,16 +141,17 @@ const AdminMain = (props) => {
                             onChange={(e) => setDescription(e.target.value)}
                         />
                     </div>
-                    {/* <div className="form-group">
+                    <div className="form-group">
                         <label for="img">Select image:</label>
                         <input
                             type="file"
                             id="imgSelect"
                             name="img"
                             accept="image/*"
+                            onChange={handleFileInputChange}
+                            value={fileInputState}
                         />
-                    </div> */}
-                    <button onClick={() => beginUpload()}>Upload Image</button>
+                    </div>
                     <button
                         type="submit"
                         className="btn-primary btn-black-outline"
@@ -163,13 +159,6 @@ const AdminMain = (props) => {
                         Add item
                     </button>
                 </form>
-                <div>
-                    <CloudinaryContext cloudName="cranium47">
-                        {images.map((i) => (
-                            <img src={i} alt="" />
-                        ))}
-                    </CloudinaryContext>
-                </div>
             </div>
             <div className="admin__current-items col-5">
                 <h3>Present items</h3>
