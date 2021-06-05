@@ -16,7 +16,7 @@ function App() {
   return (
     <Router>
         <NavBar/>
-        <main>
+        <main className="main-cotainer">
           <Switch>
             <Route path="/" exact>
               <Home />

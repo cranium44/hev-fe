@@ -5,7 +5,7 @@ import AdminMain from "./main/AdminMain";
 import "./Admin.css";
 
 const Admin = (props) => {
-    const [isLoggedIn, setIsLoggedIn] = useState(true); //change to false
+    const [isLoggedIn, setIsLoggedIn] = useState(false); //change to false
 
     return (
         <div className="">

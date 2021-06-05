@@ -47,7 +47,6 @@ const AdminMain = (props) => {
 
     const getImageAsBase64 = async (file) => {
         return new Promise((resolve) => {
-            let fileInfo;
             let baseURL = "";
             // Make new FileReader
             let reader = new FileReader();
